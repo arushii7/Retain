@@ -1,0 +1,9 @@
+# The ML libraries are pinned to the exact versions printed by the notebook (cell 93).
+# Saved joblib models only load reliably with the same scikit-learn / pandas they were trained with.
+scikit-learn==1.9.1
+pandas==3.0.6
+joblib==1.6.0
+numpy
+
+fastapi>=0.115
+uvicorn[standard]>=0.30
