@@ -1,57 +1,29 @@
-# RETAIN
+# RETAIN 🧠
 
-RETAIN is an e-commerce customer churn prediction and retention analytics app.
-It has exactly two pages:
+**An AI-powered customer churn prediction and retention system.**
 
-- **Churn Prediction** — the 18 original customer features, scored by the saved Random Forest pipeline.
-- **Model Performance** — accuracy, precision, recall and F1 for the four trained models, read from the saved metrics.
+RETAIN is a machine learning-based application designed to identify customers who are likely to leave a service. By analyzing customer data and behavioral patterns, it predicts churn probability and helps businesses take proactive steps to improve customer retention.
 
-## Run it
+## ✨ Features
 
-From the project root:
+- **Churn Prediction:** Predicts whether a customer is likely to churn using a trained machine learning model.
+- **Data Analysis:** Processes customer information to identify patterns and factors associated with churn.
+- **Prediction Interface:** Provides an accessible way to submit customer details and obtain predictions.
+- **Retention Insights:** Helps businesses identify at-risk customers and make data-driven retention decisions.
 
-```powershell
-cd backend
-uvicorn main:app --reload --port 8000
-```
+## 🛠️ Tech Stack
 
-Then open <http://localhost:8000>.
+- Python
+- Machine Learning
+- Pandas & NumPy
+- Scikit-learn
+- FastAPI
+- Docker
 
-The backend serves the frontend and the API from the same origin, so there is nothing else to configure.
-If the packages are not installed yet:
+## 🎯 Objective
 
-```powershell
-cd backend
-pip install -r requirements.txt
-```
+The goal of RETAIN is to transform customer data into actionable insights, helping businesses understand customer churn, identify potential risks, and make informed decisions to improve customer loyalty.
 
-## Structure
+---
 
-```
-RETAIN/
-  frontend/
-    index.html
-    css/styles.css
-    js/                 config, API client, UI components and the two pages
-  backend/
-    main.py             FastAPI routes; serves the frontend
-    retain_service.py   loads the saved artifacts and serves predictions / metrics
-    schemas.py          validation for the 18 customer features
-    requirements.txt
-    smoke_test.py       quick API check (python smoke_test.py)
-    artifacts/
-      retain_churn_model.joblib
-      retain_segmentation_model.joblib
-      retain_model_performance.joblib
-      retain_customer_analysis.csv   (optional)
-  notebooks/
-    AIML_ProjectM2.ipynb               original notebook, unchanged
-```
-
-## Notes
-
-- Models are **not** retrained and the ML pipeline is unchanged. All numbers come from the saved `.joblib` artifacts.
-- The historical CSV is optional. It is only used to give the KMeans clusters friendlier display names; it never blocks
-  predictions, the model-performance page or start-up.
-- Demo mode is disabled. Every result is produced by the live backend.
-- Check `http://localhost:8000/api/health` for artifact status and `http://localhost:8000/docs` for the API docs.
+**RETAIN | Predict. Understand. Retain.**
